@@ -148,15 +148,18 @@
           </div>
         </div>
 
-        <div class="column is-mobile-12 is-tablet-4 is-space">
+        <div class="column is-mobile-12 is-tablet-4">
           <div class="box is-flex is-padding-sm is-round">
             <button class="button is-plain is-primary is-mobile-0" type="submit">Create</button>
           </div>
-          <div class="box is-flex is-center is-outline is-padding-sm preview">
+          <div class="box is-flex is-center is-outline is-margin-horizontal-sm is-margin-top is-padding-vertical-sm preview">
             <img v-if="currentImage" :src="currentImage" />
           </div>
-          <div class="box">
-            <ul class="list is-disc">
+          <div class="box is-flex is-right is-sm is-padding-sm">
+            <a class="button is-plain" :href="currentImage" target="_blank">Download image</a>
+          </div>
+          <div class="box is-margin-horizontal-sm is-margin-top">
+            <ul class="list is-disc is-sm">
               <li class="item">
                 <a href="https://developer.apple.com/documentation/signinwithapplejs/incorporating_sign_in_with_apple_into_other_platforms" target="_blank" class="text is-link is-primary" rel="noopener noreferrer">Official document</a>
               </li>

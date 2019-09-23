@@ -1,19 +1,37 @@
 // Vue.js：グローバル変数（各コンポーネントで読み込んでOK）
 @import "~moftone/src/scss/tone/_moftone.scss";
 @import "~sass-dashi/src/scss/_dashi.scss";
-
-// 各種設定
-$button-plain-background-color: lighten($grey-900, 12%);
-$button-plain-hover-background-color: lighten($grey-900, 16%);
-$card-background-color: lighten($grey-900, 12%);
-$card-link-hover-background-color: lighten($grey-900, 16%);
-$theme-dark-shadow: $grey-900;
-
 @import "~musubii/src/scss/_configs.scss";
 
 // Vue.js：コンポーネント集（レイアウト層で1回のみ読み込む）
 @import "~shitajicss/src/scss/_shitaji.scss";
 @import "~musubii/src/scss/_components.scss";
+
+@include export-margin {
+  @each $key, $value in $pattern-margin-size {
+    @if $key == "md" {
+      &.is-margin-horizontal,
+      &.is-margin-horizontal-#{$key} {
+        @extend .is-margin-left-#{$key};
+        @extend .is-margin-right-#{$key};
+      }
+      &.is-margin-vertical,
+      &.is-margin-vertical-#{$key} {
+        @extend .is-margin-top-#{$key};
+        @extend .is-margin-bottom-#{$key};
+      }
+    } @else {
+      &.is-margin-horizontal-#{$key} {
+        @extend .is-margin-left-#{$key};
+        @extend .is-margin-right-#{$key};
+      }
+      &.is-margin-vertical-#{$key} {
+        @extend .is-margin-top-#{$key};
+        @extend .is-margin-bottom-#{$key};
+      }
+    }
+  }
+}
 
 @include export-padding {
   @each $key, $value in $pattern-padding-size {
