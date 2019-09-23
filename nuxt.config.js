@@ -9,10 +9,11 @@ export default {
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'Create "Sign in with Apple" button image url.' }
-    ],
-    link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { hid: 'description', name: 'description', content: 'Create "Sign in with Apple" button image url.' },
+      { hid: 'twitter:card', name: 'twitter:card', content: 'summary' },
+      { hid: 'twitter:site', name: 'twitter:site', content: '@koga_wiwi' },
+      { hid: 'twitter:title', name: 'twitter:title', content: 'Create Sign in with Apple button' },
+      { hid: 'twitter:description', name: 'twitter:description', content: 'Create "Sign in with Apple" button image url.' }
     ]
   },
   /*
@@ -47,6 +48,10 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+  },
+
+  router: {
+    base: '/sign-in-with-apple/'
   },
   /*
   ** Build configuration
