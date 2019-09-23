@@ -1,0 +1,42 @@
+// Vue.js：グローバル変数（各コンポーネントで読み込んでOK）
+@import "~moftone/src/scss/tone/_moftone.scss";
+@import "~sass-dashi/src/scss/_dashi.scss";
+
+// 各種設定
+$button-plain-background-color: lighten($grey-900, 12%);
+$button-plain-hover-background-color: lighten($grey-900, 16%);
+$card-background-color: lighten($grey-900, 12%);
+$card-link-hover-background-color: lighten($grey-900, 16%);
+$theme-dark-shadow: $grey-900;
+
+@import "~musubii/src/scss/_configs.scss";
+
+// Vue.js：コンポーネント集（レイアウト層で1回のみ読み込む）
+@import "~shitajicss/src/scss/_shitaji.scss";
+@import "~musubii/src/scss/_components.scss";
+
+@include export-padding {
+  @each $key, $value in $pattern-padding-size {
+    @if $key == "md" {
+      &.is-padding-horizontal,
+      &.is-padding-horizontal-#{$key} {
+        @extend .is-padding-left-#{$key};
+        @extend .is-padding-right-#{$key};
+      }
+      &.is-padding-vertical,
+      &.is-padding-vertical-#{$key} {
+        @extend .is-padding-top-#{$key};
+        @extend .is-padding-bottom-#{$key};
+      }
+    } @else {
+      &.is-padding-horizontal-#{$key} {
+        @extend .is-padding-left-#{$key};
+        @extend .is-padding-right-#{$key};
+      }
+      &.is-padding-vertical-#{$key} {
+        @extend .is-padding-top-#{$key};
+        @extend .is-padding-bottom-#{$key};
+      }
+    }
+  }
+}
